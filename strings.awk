@@ -136,3 +136,17 @@ function endswith(str, val) {
 		return 1;
 	}
 }
+
+# returns a character at a given position; -1 if not possible to determine
+# if -1 is provided as a position, the last character of the string is returned
+function charat(str, pos) {
+	if ( pos > length(str) || pos < -1 || pos == 0 ) {
+		return -1;
+	}
+
+	n = split(str, array, "");
+	if ( pos == -1 ) {
+		return array[n];
+	}
+	return array[pos];
+}
