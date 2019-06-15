@@ -1,7 +1,7 @@
 #!/usr/bin/awk
 
 # returns 0 if a file exists, 1 if not, -1 if not possible to find out using sh or bash
-function exists(filename) {
+function exists(filename,    c, result) {
 	c = "/bin/ls " filename;
 	
 	# if using sh	

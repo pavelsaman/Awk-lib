@@ -1,7 +1,7 @@
 #!/usr/bin/awk
 
 # deletes white characters on both sides of a string
-function trim(str) {
+function trim(str,    new_str) {
 	new_str = str;
 	gsub("^\\s+", "", new_str);
 	gsub("\\s+$", "", new_str);	
@@ -9,14 +9,14 @@ function trim(str) {
 }
 
 # deletes white characters from the left side only
-function ltrim(str) {
+function ltrim(str,    new_str) {
 	new_str = str;
 	gsub("^\\s+", "", new_str);
 	return new_str;
 }
 
 # deletes white characters from the right side only
-function rtrim(str) {
+function rtrim(str,    new_str) {
 	new_str = str;
 	gsub("\\s+$", "", new_str);
 	return new_str;
@@ -24,7 +24,7 @@ function rtrim(str) {
 
 # deletes left and right white spaces and all additional white spaces inside the string
 # leaves only one space between words
-function ftrim(str) {
+function ftrim(str,    new_str, n, i) {
 	n = split(str, array, " ");
 	if ( n > 0 ) {
 		new_str = array[1];
@@ -38,7 +38,7 @@ function ftrim(str) {
 }
 
 # converts the first character to upper case
-function capitalize(str) {
+function capitalize(str,    new_str, n, i) {
 	n = split(str, array, "");
 	if ( n > 0) {
 		new_str = toupper(array[1]);
@@ -106,7 +106,7 @@ function isspace(str) {
 }
 
 # fills the string with a specified number of 0 at the beginning (on the left)
-function zfill(str, num) {
+function zfill(str, num,    new_str, i) {
 	if ( num <= 0 ) {
 		return str;
 	}
@@ -139,7 +139,7 @@ function endswith(str, val) {
 
 # returns a character at a given position; -1 if not possible to determine
 # if -1 is provided as a position, the last character of the string is returned
-function charat(str, pos) {
+function charat(str, pos,    n) {
 	if ( pos > length(str) || pos < -1 || pos == 0 ) {
 		return -1;
 	}

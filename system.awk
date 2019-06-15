@@ -7,9 +7,7 @@ function shell() {
 
 # returns only the name of the current shell from SHELL env variable
 function sh() {
-	s = ENVIRON["SHELL"];
-	n = split(s, array, "/");
-	return array[n];
+	return array[split(ENVIRON["SHELL"], array, "/")];
 }
 
 # returns 0 if an environment variable is set, 1 if not

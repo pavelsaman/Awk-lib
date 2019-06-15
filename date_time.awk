@@ -2,7 +2,7 @@
 
 # returns a month number or -1 if not found
 # possible to use abbreviations
-function month_to_num(mon) {
+function month_to_num(mon,    months, m) {
 	months["january"] = 1;
 	months["february"] = 2;
 	months["march"] = 3;
@@ -34,7 +34,7 @@ function month_to_num(mon) {
 
 # converts a number to a months, January is 1
 # if not found, returns empty string
-function num_to_month(n) {
+function num_to_month(n,    months) {
 	months[1] = "January";
 	months[2] = "February";
 	months[3] = "March";
@@ -58,7 +58,7 @@ function num_to_month(n) {
 # converts a name of a day to a number or return -1 if not found
 # possible to use abbreviation
 # Sunday is the first day of week
-function day_to_num(day) {
+function day_to_num(day,    days, d) {
 	days["sunday"] = 1
 	days["monday"] = 2;
 	days["tuesday"] = 3;
@@ -85,7 +85,7 @@ function day_to_num(day) {
 
 # converts a number to a day
 # returns empty string if not found
-function num_to_day(n) {
+function num_to_day(n,    days) {
 	days[1] = "Sunday";	
 	days[2] = "Monday";
 	days[3] = "Tuesday";
@@ -102,13 +102,13 @@ function num_to_day(n) {
 }
 
 # returns current date in the ISO 8601 format
-function iso_date() {
+function iso_date(    format) {
 	format = "%Y-%m-%d";
 	return strftime(format, systime(), 1);
 }
 
 # returns current date and time in the ISO 8601 format
-function iso_datetime() {
+function iso_datetime(    format) {
 	format = "%Y-%m-%dT%H-%M-%SZ";
 	return strftime(format, systime(), 1);
 }
@@ -119,7 +119,7 @@ function iso_week() {
 }
 
 # returns current week number and date according to ISO 8601
-function iso_week_date() {
+function iso_week_date(    week_number, date_number) {
 	week_number = strftime("%V", systime(), 1);
 	date_number = strftime("%w", systime(), 1);
 
