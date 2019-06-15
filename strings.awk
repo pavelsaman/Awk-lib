@@ -37,3 +37,85 @@ function ftrim(str) {
 	return new_str;
 }
 
+# converts the first character to upper case
+function capitalize(str) {
+	n = split(str, array, "");
+	if ( n > 0) {
+		new_str = toupper(array[1]);
+	}
+
+	for ( i = 2; i <= n; i++ ) {
+		new_str = new_str array[i];
+	}
+
+	return new_str;
+}
+
+# returns 0 if all characters in the string are digits; or 1 of not
+function isdigit(str) {
+	if ( str ~ /^[0-9]+$/ ) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
+# returns 0 if all characters are in the alphabet
+function isalpha(str) {
+	if ( str ~ /^[[:alpha:]]+$/ ) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
+# returns 0 if all characters are lower
+function islower(str) {
+	if ( str ~ /[[:upper:]]/ ) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+# returns 0 if all characters are upper
+function isupper(str) {
+	if ( str ~ /[[:lower:]]/ ) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+# returns 0 if all chacraters are alphanumeric
+function isalnum(str) {
+	if ( str ~ /^[[:alnum:]]+$/ ) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
+# returns 0 if all characters are whitespace
+function isspace(str) {
+	if ( str ~ /^[[:space:]]+$/ ) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
+# fills the string with a specified number of 0 at the beginning (on the left)
+function zfill(str, num) {
+	if ( num <= 0 ) {
+		return str;
+	}
+
+	new_str = "0";
+	for ( i = 1; i < num; i++ ) {
+		new_str = new_str "0";
+	}	
+
+	return new_str str;
+}
+
