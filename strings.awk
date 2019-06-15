@@ -119,3 +119,20 @@ function zfill(str, num) {
 	return new_str str;
 }
 
+# returns 0 when the strings starts with a given value
+function startswith(str, val) {
+	if ( substr(str, 1, length(val)) == val ) {
+		return 0;
+	} else {
+		return 1;
+	}	
+}
+
+# returns 0 when the string ends with a given value
+function endswith(str, val) {
+	if ( substr(str, length(str) - length(val) + 1, length(str)) == val ) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
