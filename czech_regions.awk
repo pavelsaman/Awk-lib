@@ -19,7 +19,7 @@ function region(zip) {
 		case /^26(1|2|3|4|6|7|8|9)[ ]?[[:digit:]]{2}$/:
 		case /^27(0|1|2|3|4|6|7|8)[ ]?[[:digit:]]{2}$/:
 		case /^28(0|1|2|4|5|6|8|9)[ ]?[[:digit:]]{2}$/:
-		case /^29(0|3)[ ]?[[:digit:]]{2}$/:
+		case /^29(0|3|4|5)[ ]?[[:digit:]]{2}$/:
 			return "Central Bohemian";
 			break;
 		# Plzeň region
