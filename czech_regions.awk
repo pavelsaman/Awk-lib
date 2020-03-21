@@ -31,8 +31,7 @@ function region(zip) {
 			return "Plzeň";
 			break;
 		# Karlovy Vary region
-		case /^35(0|1|2|3)[ ]?[[:digit:]]{2}$/:
-		case /^35(6|7|8)[ ]?[[:digit:]]{2}$/:
+		case /^35(0|1|2|3|6|7|8)[ ]?[[:digit:]]{2}$/:
 		case /^36(0|1|2|3|4)[ ]?[[:digit:]]{2}$/:
 			return "Karlovy Vary";
 			break;
